@@ -6,3 +6,15 @@ Class {
 	],
 	#category : #Juego
 }
+
+{ #category : #accessing }
+Jugador >> numero [
+
+	^ numero
+]
+
+{ #category : #accessing }
+Jugador >> numero: anObject [
+
+	numero := anObject
+]
