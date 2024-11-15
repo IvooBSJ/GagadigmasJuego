@@ -2,7 +2,8 @@ Class {
 	#name : #Jugador,
 	#superclass : #Object,
 	#instVars : [
-		'numero'
+		'numero',
+		'droga'
 	],
 	#category : #Juego
 }
