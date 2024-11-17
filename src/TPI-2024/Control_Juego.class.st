@@ -2,8 +2,7 @@ Class {
 	#name : #'Control_Juego',
 	#superclass : #Object,
 	#instVars : [
-		'jugadores',
-		'lol'
+		'jugadores'
 	],
 	#category : #'TPI-2024'
 }
