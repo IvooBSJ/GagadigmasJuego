@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'nombre',
 		'color',
-		'territorio'
+		'territorio',
+		'edad'
 	],
 	#category : #'TPI-2024'
 }
