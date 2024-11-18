@@ -3,7 +3,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'nombre',
-		'color'
+		'color',
+		'territorio'
 	],
 	#category : #'TPI-2024'
 }
@@ -47,4 +48,16 @@ Jugador >> nombre [ [
 Jugador >> nombre: unNombre [ [
         nombre := unNombre
     ]
+]
+
+{ #category : #accessing }
+Jugador >> numero [
+
+	^ numero
+]
+
+{ #category : #accessing }
+Jugador >> numero: anObject [
+
+	numero := anObject
 ]
