@@ -41,6 +41,13 @@ TableroMorph >> inicializarTablero [
     self extent: 400@400.
 ]
 
+{ #category : #'as yet unclassified' }
+TableroMorph >> iniciarJuego [
+	"Aca iniciamos el juego"
+
+
+]
+
 { #category : #printing }
 TableroMorph >> manejarClick: fila [ columna
     Transcript show: 'Casilla en posición (', fila printString, ', ', columna printString, ') clickeada'; cr.

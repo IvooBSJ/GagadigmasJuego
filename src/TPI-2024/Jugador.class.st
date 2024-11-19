@@ -5,6 +5,7 @@ Class {
 		'nombre',
 		'color',
 		'territorio',
+		'ubicacion',
 		'edad'
 	],
 	#category : #'TPI-2024'
@@ -46,9 +47,9 @@ Jugador >> nombre [ [
 ]
 
 { #category : #initialize }
-Jugador >> nombre: unNombre [ [
+Jugador >> nombre: unNombre [ 
         nombre := unNombre
-    ]
+    
 ]
 
 { #category : #accessing }
