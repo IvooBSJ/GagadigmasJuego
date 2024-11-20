@@ -5,8 +5,7 @@ Class {
 		'nombre',
 		'color',
 		'territorio',
-		'ubicacion',
-		'edad'
+		'ubicacion'
 	],
 	#category : #'TPI-2024'
 }
