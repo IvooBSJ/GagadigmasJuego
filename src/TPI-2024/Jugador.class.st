@@ -2,10 +2,10 @@ Class {
 	#name : #Jugador,
 	#superclass : #Object,
 	#instVars : [
-		'nombre',
+		'id',
 		'color',
-		'territorio',
-		'ubicacion'
+		'tematica',
+		'celda'
 	],
 	#category : #'TPI-2024'
 }
@@ -26,6 +26,18 @@ Jugador class >> newNombre: unNombre color: unColor [ [
 ]
 
 { #category : #accessing }
+Jugador >> celda [
+
+	^ celda
+]
+
+{ #category : #accessing }
+Jugador >> celda: anObject [
+
+	celda := anObject
+]
+
+{ #category : #accessing }
 Jugador >> color [ [
         ^ color
     ]
@@ -40,25 +52,25 @@ Jugador >> color: unColor [ [
 ]
 
 { #category : #accessing }
-Jugador >> nombre [ [
-        ^ nombre
-    ]
-]
+Jugador >> id [
 
-{ #category : #initialize }
-Jugador >> nombre: unNombre [ 
-        nombre := unNombre
-    
+	^ id
 ]
 
 { #category : #accessing }
-Jugador >> numero [
+Jugador >> id: anObject [
 
-	^ numero
+	id := anObject
 ]
 
 { #category : #accessing }
-Jugador >> numero: anObject [
+Jugador >> tematica [
 
-	numero := anObject
+	^ tematica
+]
+
+{ #category : #accessing }
+Jugador >> tematica: anObject [
+
+	tematica := anObject
 ]
