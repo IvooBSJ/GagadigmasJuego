@@ -5,7 +5,7 @@ Class {
 		'id',
 		'color',
 		'tematica',
-		'celda'
+		'celdas'
 	],
 	#category : #'TPI-2024'
 }
@@ -26,29 +26,36 @@ Jugador class >> newNombre: unNombre color: unColor [ [
 ]
 
 { #category : #accessing }
-Jugador >> celda [
-
-	^ celda
+Jugador >> casillas [
+	^ celdas
 ]
 
 { #category : #accessing }
-Jugador >> celda: anObject [
+Jugador >> casillas: anObject [
 
-	celda := anObject
+(self casillas = nil) ifTrue:[celdas := OrderedCollection new].
+
+	anObject do:[ :i |
+		celdas add: i.
+		].
+	^celdas.
+	
+	
+		
+	 
+	
 ]
 
 { #category : #accessing }
-Jugador >> color [ [
-        ^ color
-    ]
+Jugador >> color [
+
+	^ color
 ]
 
-{ #category : #initialize }
-Jugador >> color: unColor [ [
-        (Jugador coloresDisponibles includes: unColor)
-            ifTrue: [color := unColor]
-            ifFalse: [self error: 'Color no válido. Los colores disponibles son: ', (Jugador coloresDisponibles joinSeparatedBy: ', ')]
-    ]
+{ #category : #accessing }
+Jugador >> color: anObject [
+
+	color := anObject
 ]
 
 { #category : #accessing }
@@ -61,6 +68,38 @@ Jugador >> id [
 Jugador >> id: anObject [
 
 	id := anObject
+]
+
+{ #category : #initialization }
+Jugador >> initialize [ 
+	self id: nil.
+	self color: nil.
+	self casillas: OrderedCollection new.
+	self tematica: nil.
+]
+
+{ #category : #accessing }
+Jugador >> nombre [ [
+        ^ nombre
+    ]
+]
+
+{ #category : #initialize }
+Jugador >> nombre: unNombre [ 
+        nombre := unNombre
+    
+]
+
+{ #category : #accessing }
+Jugador >> numero [
+
+	^ numero
+]
+
+{ #category : #accessing }
+Jugador >> numero: anObject [
+
+	numero := anObject
 ]
 
 { #category : #accessing }
