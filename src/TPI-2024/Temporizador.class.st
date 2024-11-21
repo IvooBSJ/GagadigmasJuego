@@ -1,6 +1,6 @@
 Class {
 	#name : #Temporizador,
-	#superclass : #Duelo,
+	#superclass : #Object,
 	#instVars : [
 		'activo',
 		'restante',
