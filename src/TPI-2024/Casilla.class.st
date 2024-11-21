@@ -1,14 +1,28 @@
 Class {
 	#name : #Casilla,
-	#superclass : #Object,
+	#superclass : #BorderedMorph,
 	#instVars : [
+		'id',
+		'tematica',
+		'coulor',
 		'i',
 		'j',
-		'nombreDueño',
 		'estado'
 	],
 	#category : #'TPI-2024'
 }
+
+{ #category : #accessing }
+Casilla >> coulor [
+
+	^ coulor
+]
+
+{ #category : #accessing }
+Casilla >> coulor: anObject [
+
+	coulor := anObject
+]
 
 { #category : #accessing }
 Casilla >> estado [
@@ -35,6 +49,28 @@ Casilla >> i: anObject [
 ]
 
 { #category : #accessing }
+Casilla >> id [
+
+	^ id
+]
+
+{ #category : #accessing }
+Casilla >> id: anObject [
+
+	id := anObject
+]
+
+{ #category : #initialization }
+Casilla >> initialize [
+    super initialize.
+    self bounds: (0@0 extent: 50@50).  "Tamaño de 100x100 píxeles"
+    self borderWidth: 2.                "Ancho del borde"
+    self borderColor: Color black.      "Color del borde"
+    self color: Color lightGray.        "Color de fondo"
+   
+]
+
+{ #category : #accessing }
 Casilla >> j [
 
 	^ j
@@ -46,20 +82,20 @@ Casilla >> j: anObject [
 	j := anObject
 ]
 
-{ #category : #accessing }
-Casilla >> nombreDueño [
-
-	^ nombreDueño
-]
-
-{ #category : #accessing }
-Casilla >> nombreDueño: anObject [
-
-	nombreDueño := anObject
-]
-
 { #category : #'as yet unclassified' }
 Casilla >> ocupar: color [
 	"metodo para ocupar la casilla"
 	(estado) ifFalse:[ estado:= true. self color: color].
+]
+
+{ #category : #accessing }
+Casilla >> tematica [
+
+	^ tematica
+]
+
+{ #category : #accessing }
+Casilla >> tematica: anObject [
+
+	tematica := anObject
 ]
