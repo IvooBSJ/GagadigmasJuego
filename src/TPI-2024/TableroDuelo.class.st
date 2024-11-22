@@ -23,7 +23,7 @@ TableroDuelo >> crearTableroPreguntas [
     preguntaMorph color: Color black.
     preguntaMorph position: 80@50. "Posición relativa dentro del tablero de preguntas"
     
-    offset := 150. "Distancia inicial desde la parte superior"
+    offset := 120. "Distancia inicial desde la parte superior"
     botonMorphs := #('París' 'Londres' 'Roma' 'Berlín') collect: [ :opcion |
         | boton |
         boton := SimpleButtonMorph new.
@@ -31,10 +31,10 @@ TableroDuelo >> crearTableroPreguntas [
         boton target: self; actionSelector: #respuestaSeleccionada:; arguments: {opcion}.
         boton color: Color lightGray.
         boton borderWidth: 1; borderColor: Color black.
-        boton extent: 100@30.
+        boton extent: 200@30.
         boton position: (250 - boton width // 2) @ offset. "Centrado horizontalmente"
         offset := offset + 50. "Incrementar para colocar los botones uno debajo del otro"
-        boton.
+		  boton.
     ].
     
     ^ BorderedMorph new
@@ -46,9 +46,27 @@ TableroDuelo >> crearTableroPreguntas [
 ]
 
 { #category : #'as yet unclassified' }
-TableroDuelo >> iniciarTabDuelo [
+TableroDuelo >> iniciarTableroDuelo [
+    | tableroPrincipal tableroPuntajes tableroPreguntas espacioPreguntas |
+    
+    "Crear el contenedor principal"
+    tableroPrincipal := BorderedMorph new.
+    tableroPrincipal color: Color gray.
+    tableroPrincipal extent: 320@350. "Dimensiones totales del contenedor"
+    
+    "Agregar el tablero de puntajes al contenedor principal"
+    tableroPuntajes := (self tamaño: 10 colorp1: Color red colorp2: Color blue). "Llamada a tu constructor existente"
+    tableroPrincipal addMorph: tableroPuntajes.
+    
+    "Calcular el espacio restante para las preguntas"
+    espacioPreguntas := tableroPrincipal height - tableroPuntajes height.
+    
+    "Crear el tablero de preguntas"
+    tableroPreguntas := (self crearTableroPreguntas).
+    tableroPrincipal addMorph: tableroPreguntas.
 
-| anchura altura|
+    "Mostrar el contenedor principal en el mundo"
+    tableroPrincipal openInWorld.
 ]
 
 { #category : #initialization }
@@ -142,36 +160,6 @@ TableroDuelo >> mostrarPregunta: preg conOpciones: opciones [
 
     "Agregar el contenedor de la pregunta al tablero principal"
     self addMorph: tableroPregunta.
-]
-
-{ #category : #'as yet unclassified' }
-TableroDuelo >> mostrarTableroDuelo [
-    | tableroPrincipal tableroPuntajes tableroPreguntas espacioPreguntas |
-    
-    "Crear el contenedor principal"
-    tableroPrincipal := BorderedMorph new.
-    tableroPrincipal color: Color gray.
-    tableroPrincipal extent: 320@350. "Dimensiones totales del contenedor"
-    
-    "Agregar el tablero de puntajes al contenedor principal"
-    tableroPuntajes := (self tamaño: 10 colorp1: Color red colorp2: Color blue). "Llamada a tu constructor existente"
-    tableroPrincipal addMorph: tableroPuntajes.
-    
-    "Calcular el espacio restante para las preguntas"
-    espacioPreguntas := tableroPrincipal height - tableroPuntajes height.
-    
-    "Crear el tablero de preguntas"
-    tableroPreguntas := BorderedMorph new.
-    tableroPreguntas color: Color gray.
-    tableroPreguntas extent: (tableroPrincipal width) @ espacioPreguntas.
-    tableroPreguntas position: tableroPuntajes bottomLeft. "Colocar justo debajo del tablero de puntajes"
-    tableroPrincipal addMorph: tableroPreguntas.
-    
-    "Agregar una pregunta interactiva al tablero de preguntas"
-    tableroPreguntas addMorph: (self crearTableroPreguntas).
-
-    "Mostrar el contenedor principal en el mundo"
-    tableroPrincipal openInWorld.
 ]
 
 { #category : #accessing }
