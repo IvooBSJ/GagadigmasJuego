@@ -1,6 +1,5 @@
 Class {
 	#name : #Casilla,
-
 	#superclass : #SimpleButtonMorph,
 	#instVars : [
 		'id',
@@ -11,11 +10,11 @@ Class {
 }
 
 { #category : #accessing }
-
 Casilla >> apagarBordes [
     procesoBordes ifNotNil: [procesoBordes terminate].  "Detiene el proceso si existe"
     procesoBordes := nil.  "Limpia la referencia"
 
+]
 
 { #category : #accessing }
 Casilla >> estado [
@@ -66,24 +65,15 @@ Casilla >> initialize [
 ]
 
 { #category : #accessing }
+Casilla >> j [
 
-	^ id
+	^ j
 ]
 
 { #category : #accessing }
-Casilla >> id: anObject [
+Casilla >> j: anObject [
 
-	id := anObject
-]
-
-{ #category : #initialization }
-Casilla >> initialize [
-    super initialize.
-    self bounds: (0@0 extent: 50@50).  "Tamaño de 100x100 píxeles"
-    self borderWidth: 2.                "Ancho del borde"
-    self borderColor: Color black.      "Color del borde"
-    self color: Color lightGray.        "Color de fondo"
-   
+	j := anObject
 ]
 
 { #category : #accessing }
@@ -101,10 +91,14 @@ Casilla >> mouseUp: anEvent [
 { #category : #accessing }
 Casilla >> nombreDueño [
 
-
-	^ j
+	^ nombreDueño
 ]
 
+{ #category : #accessing }
+Casilla >> nombreDueño: anObject [
+
+	nombreDueño := anObject
+]
 
 { #category : #'as yet unclassified' }
 Casilla >> ocupar: color [
@@ -113,7 +107,6 @@ Casilla >> ocupar: color [
 ]
 
 { #category : #accessing }
-
 Casilla >> pintarVerde [
 	^self color: Color green.
 ]
@@ -139,5 +132,4 @@ Casilla >> resaltarBordes [
 	"Actualiza el color del borde"
     self borderColor: (colores at: index).
     self changed.  "Actualiza visualmente el Morph"
-
 ]
