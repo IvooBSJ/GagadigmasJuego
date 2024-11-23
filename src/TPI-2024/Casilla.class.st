@@ -17,30 +17,6 @@ Casilla >> apagarBordes [
 ]
 
 { #category : #accessing }
-Casilla >> estado [
-
-	^ estado
-]
-
-{ #category : #accessing }
-Casilla >> estado: bool [
-
-	estado := bool
-]
-
-{ #category : #accessing }
-Casilla >> i [
-
-	^ i
-]
-
-{ #category : #accessing }
-Casilla >> i: anObject [
-
-	i := anObject
-]
-
-{ #category : #accessing }
 Casilla >> id [
 
 	^ id
@@ -61,19 +37,8 @@ Casilla >> initialize [
     self borderColor: Color black.      "Color del borde"
     self color: Color lightGray.        "Color de fondo"
 	 self id: nil.
+	 
    
-]
-
-{ #category : #accessing }
-Casilla >> j [
-
-	^ j
-]
-
-{ #category : #accessing }
-Casilla >> j: anObject [
-
-	j := anObject
 ]
 
 { #category : #accessing }
@@ -83,27 +48,15 @@ Casilla >> mouseAction: aBlock [
 ]
 
 { #category : #accessing }
+Casilla >> mouseDown: anEvent [
+    "Ignora el cambio de color al presionar, pero ejecuta la acción del mouse."
+    mouseAction ifNotNil: [mouseAction value].
+]
+
+{ #category : #accessing }
 Casilla >> mouseUp: anEvent [
 	"Método de Pharo usado para asignar un evento a un click"
-	mouseAction value
-]
-
-{ #category : #accessing }
-Casilla >> nombreDueño [
-
-	^ nombreDueño
-]
-
-{ #category : #accessing }
-Casilla >> nombreDueño: anObject [
-
-	nombreDueño := anObject
-]
-
-{ #category : #'as yet unclassified' }
-Casilla >> ocupar: color [
-	"metodo para ocupar la casilla"
-	(estado) ifFalse:[ estado:= true. self color: color].
+	"mouseAction value"
 ]
 
 { #category : #accessing }

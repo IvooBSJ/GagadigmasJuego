@@ -76,6 +76,9 @@ Tematicas >> initializeAtletismo [
 
 { #category : #initialization }
 Tematicas >> initializeCapitalesDelMundo [
+
+	tematicas at:2 put:'CapitalesDelMundo'.
+	
     preguntas at: 41 put: #('¿Cuál es la capital de Australia?' 'Canberra' 'Sídney' 'Melbourne' 'Perth').
     preguntas at: 42 put: #('¿Cuál es la capital de Canadá?' 'Ottawa' 'Toronto' 'Montreal' 'Vancouver').
     preguntas at: 43 put: #('¿Cuál es la capital de Japón?' 'Tokio' 'Osaka' 'Kioto' 'Hiroshima').
@@ -121,6 +124,8 @@ Tematicas >> initializeCapitalesDelMundo [
 
 { #category : #initialization }
 Tematicas >> initializeDinosaurios [
+	tematicas at:6 put: 'Dinosaurios'.
+	
     preguntas at: 241 put: #('¿Cuál es el dinosaurio más grande conocido?' 'Brachiosaurus' 'Tyrannosaurus rex' 'Triceratops' 'Velociraptor').
     preguntas at: 242 put: #('¿Qué dinosaurio es conocido por su cuello largo y su cuerpo masivo?' 'Brachiosaurus' 'Stegosaurus' 'Spinosaurus' 'Allosaurus').
     preguntas at: 243 put: #('¿Qué dinosaurio tenía una cresta sobre su cabeza, utilizada posiblemente para el cortejo?' 'Parasaurolophus' 'Triceratops' 'Velociraptor' 'Ankylosaurus').

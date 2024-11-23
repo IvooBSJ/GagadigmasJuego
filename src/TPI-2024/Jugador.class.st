@@ -10,21 +10,6 @@ Class {
 	#category : #'TPI-2024'
 }
 
-{ #category : #printing }
-Jugador class >> coloresDisponibles [ [
-        ^ #('Azul' 'Amarillo' 'Rojo' 'Rosa' 'Naranja' 'Verde' 'Violeta' 'Morado')
-    ]
-]
-
-{ #category : #'instance creation' }
-Jugador class >> newNombre: unNombre color: unColor [ [
-        ^ self new
-            nombre: unNombre;
-            color: unColor;
-            yourself
-    ]
-]
-
 { #category : #accessing }
 Jugador >> casillas [
 	^ celdas
@@ -79,27 +64,8 @@ Jugador >> initialize [
 ]
 
 { #category : #accessing }
-Jugador >> nombre [ [
-        ^ nombre
-    ]
-]
-
-{ #category : #initialize }
-Jugador >> nombre: unNombre [ 
-        nombre := unNombre
-    
-]
-
-{ #category : #accessing }
-Jugador >> numero [
-
-	^ numero
-]
-
-{ #category : #accessing }
-Jugador >> numero: anObject [
-
-	numero := anObject
+Jugador >> perdedor [
+	^ celdas := 0.
 ]
 
 { #category : #accessing }
